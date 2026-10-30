@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#101916">
+<meta name="description" content="نفس؛ همراهی آرام برای مدیریت مصرف روزانه سیگار">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<title>نفس | NAFAS</title>
+<style>
+:root{--bg:#101916;--panel:#1a2521;--panel2:#202e28;--text:#f2f4ee;--muted:#aab8ae;--green:#b7d6b2;--green2:#7eaa88;--orange:#e8b779;--red:#e28f83;--line:#314039;--radius:22px}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 50% -20%,#30483a 0%,var(--bg) 55%);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",sans-serif;min-height:100vh;padding:env(safe-area-inset-top) 16px calc(26px + env(safe-area-inset-bottom))}
+.app{max-width:520px;margin:auto}.top{display:flex;align-items:center;justify-content:space-between;padding:20px 4px 18px}.brand{font-size:25px;font-weight:750;letter-spacing:2px}.brand span{color:var(--green);font-weight:400;letter-spacing:0}.date{font-size:12px;color:var(--muted)}
+.card{background:linear-gradient(145deg,rgba(34,49,42,.96),rgba(24,35,30,.96));border:1px solid rgba(183,214,178,.12);border-radius:var(--radius);padding:20px;margin-bottom:14px;box-shadow:0 12px 35px #0002}
+.hero{text-align:center;padding:24px 20px 20px}.eyebrow{font-size:12px;color:var(--muted);margin-bottom:12px}.count{font-size:66px;line-height:1;font-weight:650;letter-spacing:-2px}.count small{font-size:17px;color:var(--muted);font-weight:400;letter-spacing:0}.sub{color:var(--muted);font-size:13px;margin-top:10px}
+.progress{height:7px;background:#34443b;border-radius:9px;margin:20px 4px 7px;overflow:hidden}.progress>i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--green2),var(--green));border-radius:9px;transition:width .3s}
+.row{display:flex;align-items:center;justify-content:space-between;gap:12px}.muted{color:var(--muted);font-size:13px}.bigbtn{border:0;background:var(--green);color:#17231b;font-size:16px;font-weight:700;border-radius:16px;padding:15px 20px;width:100%;margin-top:16px;cursor:pointer}.bigbtn:active,.btn:active{transform:scale(.98)}button{font:inherit}.btn{border:1px solid var(--line);background:#26362e;color:var(--text);border-radius:13px;padding:11px 14px;cursor:pointer}.btn.primary{background:var(--green);color:#17231b;border-color:transparent;font-weight:700}.btn.warn{color:var(--orange)}.section-title{font-size:16px;font-weight:700;margin:0 0 15px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.stat{background:#16211c;border:1px solid var(--line);border-radius:16px;padding:14px}.stat b{display:block;font-size:24px;margin-top:5px}.stat span{font-size:12px;color:var(--muted)}
+.actions{display:flex;gap:9px;margin-top:14px}.actions .btn{flex:1}
+input,select{width:100%;background:#111b16;color:var(--text);border:1px solid var(--line);border-radius:12px;padding:13px;font-size:15px;outline:none}label{font-size:12px;color:var(--muted);display:block;margin:0 0 7px}.field{margin-bottom:14px}.fields{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.nav{position:sticky;bottom:8px;display:flex;gap:6px;padding:7px;background:#111b16ed;border:1px solid var(--line);border-radius:18px;backdrop-filter:blur(18px);margin:18px 0 0}.nav button{flex:1;background:transparent;border:0;color:var(--muted);padding:10px 3px;border-radius:12px;font-size:12px}.nav button.active{background:#2a3c31;color:var(--green)}
+.view{display:none}.view.active{display:block}.hint{font-size:12px;line-height:1.8;color:var(--muted);margin:12px 2px 0}.pill{display:inline-block;background:#2d4134;color:var(--green);border-radius:30px;padding:6px 10px;font-size:11px}
+.barlist{display:flex;align-items:end;gap:7px;height:125px;padding-top:10px}.baritem{flex:1;text-align:center;height:100%;display:flex;flex-direction:column;justify-content:end;gap:7px;font-size:10px;color:var(--muted)}.bar{background:linear-gradient(0deg,#71977b,#b7d6b2);border-radius:7px 7px 2px 2px;min-height:3px;width:100%}
+.toast{position:fixed;bottom:95px;left:50%;transform:translateX(-50%);background:#e8f0e5;color:#17231b;padding:12px 18px;border-radius:14px;font-size:13px;box-shadow:0 8px 30px #0005;display:none;z-index:5;max-width:90%;text-align:center}
+.modal{position:fixed;inset:0;background:#0009;display:none;align-items:end;justify-content:center;padding:14px;z-index:8}.modal.show{display:flex}.sheet{background:#1b2922;border:1px solid var(--line);border-radius:24px;padding:22px;width:100%;max-width:500px}.sheet h3{margin:0 0 8px}.sheet p{color:var(--muted);font-size:13px;line-height:1.8}
+.empty{text-align:center;color:var(--muted);padding:22px 0;font-size:13px}
+footer{text-align:center;color:#728078;font-size:10px;padding:18px 0}
+@media(min-width:600px){body{padding-top:30px}.nav{position:static}}
+</style>
+</head>
+<body>
+<div class="app">
+<header class="top"><div><div class="brand">NAFAS <span>| نفس</span></div><div class="date" id="today"></div></div><span class="pill">آرام، قدم‌به‌قدم</span></header>
+
+<section id="home" class="view active">
+ <div class="card hero">
+  <div class="eyebrow">مصرف امروز</div>
+  <div class="count"><span id="used">0</span><small> / <span id="limitText">10</span> نخ</small></div>
+  <div class="sub" id="remaining">۱۰ نخ تا سقف روزانه باقی مانده</div>
+  <div class="progress"><i id="progress"></i></div>
+  <div class="row muted"><span>شروع روز</span><span id="scheduleText">۸:۰۰ تا ۲۲:۰۰</span></div>
+  <button class="bigbtn" id="addBtn">＋ ثبت یک نخ</button>
+  <div class="actions"><button class="btn" id="undoBtn">بازگردانی آخرین ثبت</button><button class="btn warn" id="craveBtn">الان هوس کردم</button></div>
+ </div>
+ <div class="grid">
+  <div class="stat"><span>باقی‌مانده امروز</span><b id="leftStat">10</b></div>
+  <div class="stat"><span>مصرف این هفته</span><b id="weekStat">0</b></div>
+ </div>
+ <div class="card" style="margin-top:14px"><div class="row"><h3 class="section-title" style="margin:0">یادآور بعدی</h3><span class="pill" id="notifyState">یادآورها خاموش</span></div><p class="hint" id="nextReminder">برای فعال‌کردن یادآورها، زمان‌بندی را تنظیم و اجازه اعلان را صادر کن.</p><button class="btn" id="enableBtn" style="width:100%;margin-top:12px">فعال‌سازی اعلان‌ها</button></div>
+</section>
+
+<section id="schedule" class="view">
+ <div class="card"><h3 class="section-title">تنظیم برنامه روزانه</h3>
+  <div class="field"><label>سقف مصرف روزانه (نخ)</label><input id="limitInput" type="number" min="1" max="99" inputmode="numeric"></div>
+  <div class="fields"><div class="field"><label>شروع بازه</label><input id="startInput" type="time"></div><div class="field"><label>پایان بازه</label><input id="endInput" type="time"></div></div>
+  <div class="field"><label>فاصله پیشنهادی بین یادآورها (دقیقه)</label><input id="intervalInput" type="number" min="15" max="360" step="5"></div>
+  <button class="bigbtn" id="saveSettings">ذخیره برنامه</button>
+  <p class="hint">یادآورها در نسخه وب هنگام باز بودن برنامه قابل اتکاترند. iOS ممکن است اعلان‌های زمان‌بندی‌شده را در پس‌زمینه محدود کند.</p>
+ </div>
+ <div class="card"><h3 class="section-title">یادآوری‌ها</h3><p class="hint">برای دریافت اعلان، ابتدا برنامه را از Safari به صفحه اصلی اضافه کن و سپس اجازه اعلان را بده. اعلان وب در iOS 16.4 یا جدیدتر، پس از افزودن به صفحه اصلی پشتیبانی می‌شود.</p><button class="btn" id="testNotify" style="width:100%;margin-top:10px">ارسال اعلان آزمایشی</button></div>
+</section>
+
+<section id="reports" class="view">
+ <div class="card"><h3 class="section-title">گزارش مصرف</h3><div class="grid"><div class="stat"><span>امروز</span><b id="rToday">0</b></div><div class="stat"><span>۷ روز اخیر</span><b id="rWeek">0</b></div><div class="stat"><span>۳۰ روز اخیر</span><b id="rMonth">0</b></div><div class="stat"><span>میانگین روزانه ماه</span><b id="rAvg">0</b></div></div></div>
+ <div class="card"><div class="row"><h3 class="section-title" style="margin:0">۷ روز اخیر</h3><span class="muted">تعداد نخ</span></div><div class="barlist" id="chart"></div></div>
+ <div class="card"><h3 class="section-title">تاریخچه امروز</h3><div id="history" class="empty">هنوز موردی ثبت نشده است.</div></div>
+</section>
+
+<nav class="nav"><button class="active" data-tab="home">خانه</button><button data-tab="schedule">برنامه</button><button data-tab="reports">گزارش‌ها</button></nav>
+<footer>NAFAS · نفس — همراهی برای انتخاب آگاهانه‌تر</footer>
+</div>
+<div class="toast" id="toast"></div>
+<div class="modal" id="craveModal"><div class="sheet"><h3>یک مکث کوتاه 🌿</h3><p>لازم نیست همین لحظه تصمیم بگیری. چند دقیقه به خودت فرصت بده؛ اگر بعدش همچنان خواستی، می‌توانی مصرف را ثبت کنی.</p><div class="grid"><button class="btn primary" id="delay5">۵ دقیقه مکث</button><button class="btn primary" id="delay10">۱۰ دقیقه مکث</button></div><button class="btn" id="logInstead" style="width:100%;margin-top:10px">ثبت مصرف</button><button class="btn" id="closeModal" style="width:100%;margin-top:8px">فعلاً نه</button><p id="timerText" style="text-align:center;margin-bottom:0"></p></div></div>
+<script src="app.js"></script>
+</body></html>
